@@ -15,7 +15,7 @@ function codingplus_admin_notices() {
 
 function codingplus_activation() {
     if (!is_plugin_active('codingninjasdev/coding-ninjas.php') ) { //Check if the base plugin is activated
-        deactivate_plugins('codingplus/codingplus.php'); //If the base plugin is not active, then deactivate this plugin
+        deactivate_plugins(plugin_basename( __FILE__ )); //If the base plugin is not active, then deactivate this plugin
     }
 }
 add_action( 'admin_init', 'codingplus_activation' );
