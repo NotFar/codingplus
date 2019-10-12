@@ -33,7 +33,7 @@ function include_codingplusscript() {
 	if ( ! did_action( 'wp_enqueue_media' ) ) {
 		wp_enqueue_media();
 	}
-	wp_enqueue_script( 'codingplus', plugins_url('ink/js/codingplus.js', __FILE__), array(), '1.0.0', true );
+	wp_enqueue_script( 'codingplus', plugins_url('inc/js/codingplus.js', __FILE__), array(), '1.0.0', true );
 }
 add_action( 'admin_enqueue_scripts', 'include_codingplusscript' );
 ?>
