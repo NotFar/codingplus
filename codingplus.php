@@ -7,6 +7,8 @@
  * License: GPLv2 or later
  */
 
+require_once ABSPATH .'/wp-admin/includes/plugin.php';
+
 function codingplus_admin_notices() {
 	echo '<div class="error"><p>Important! Install or activate the base plugin "Coding Ninjas Tasks"</p></div>'; //Message
 }
@@ -26,7 +28,10 @@ if (!is_plugin_active('codingninjasdev/coding-ninjas.php') ) {
 add_action( 'admin_init', 'codingplus_admin_notices_msg' );
 
 /*--If the logic is not broken, then run all the functions of the plugin--*/
+
+if (is_plugin_active('codingninjasdev/coding-ninjas.php') ) {
 require dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'inc' . DIRECTORY_SEPARATOR . 'settings.php';
+}
 
 /*----------Add scrpt-----------*/
 function include_codingplusscript() {
